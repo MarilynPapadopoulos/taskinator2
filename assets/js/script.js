@@ -11,6 +11,11 @@ var taskFormHandler = function(event) {
         name: taskNameInput,
         type: taskTypeInput
     };
+    if (!taskNameInput || !taskTypeInput) {
+        alert("Please enter both fields");
+        return false;
+    }
+    formEl.reset();
     createTaskEl(taskDataObj);
 }
 var createTaskEl = function(taskDataObj) {
